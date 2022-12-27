@@ -19,6 +19,10 @@ const rotationAnimation = keyframes`
   }
 `;
 
+const Emoji = styled.span`
+  font-size: 40px;
+`;
+
 const Box = styled.div`
   display: flex;
   background-color: tomato;
@@ -27,13 +31,11 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   animation: ${rotationAnimation} 3s linear infinite;
-  span {
+  // 다음과 같이 지정할 수 있다 그러면 div, p, span 이건 상관 없음
+  ${Emoji} {
     font-size: 50px;
     &:hover {
-      font-size: 40px;
-    }
-    &:active {
-      opacity: 0;
+      font-size: 98px;
     }
   }
 `;
@@ -43,8 +45,9 @@ function App() {
     // as를 사용하여 div => as로 변경 가능
     <Wrapper>
       <Box>
-        <span>😍</span>
+        <Emoji>😍</Emoji>
       </Box>
+      <Emoji>😍</Emoji>
     </Wrapper>
   );
 }
