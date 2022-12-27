@@ -1,8 +1,17 @@
 import styled, { keyframes } from "styled-components";
 
+const Title = styled.h1`
+  color: ${(props) => props.theme.textColor};
+`;
+
 //백틱 안에는 CSS폼으로 ; 이고 따옴표 사용 div를 변경하여  CSS 부분을 사용하고 싶다면? as를 사용
 const Wrapper = styled.div`
   display: flex;
+  height: 100vh;
+  width: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => props.theme.backgroundColor};
 `;
 
 const rotationAnimation = keyframes`
@@ -40,14 +49,11 @@ const Box = styled.div`
   }
 `;
 
-function App() {
+function App(props) {
   return (
     // as를 사용하여 div => as로 변경 가능
     <Wrapper>
-      <Box>
-        <Emoji>😍</Emoji>
-      </Box>
-      <Emoji>😍</Emoji>
+      <Title>Hello {console.log(props)}</Title>
     </Wrapper>
   );
 }
